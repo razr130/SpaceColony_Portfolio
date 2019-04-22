@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_about"
+        android:icon="@drawable/avatar2"
+        android:title="@string/nav_about" />
+    <item
+        android:id="@+id/nav_photo"
+        android:icon="@drawable/camera"
+        android:title="@string/nav_photo" />
+    <item
+        android:id="@+id/nav_art"
+        android:icon="@drawable/blueprint"
+        android:title="@string/nav_art" />
+    <item
+        android:id="@+id/nav_video"
+        android:icon="@drawable/videocamera"
+        android:title="@string/nav_video" />
+</menu>
