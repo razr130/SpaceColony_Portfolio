@@ -2,6 +2,8 @@ package com.example.spacecolony_portfolio;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -28,19 +30,53 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView nav_bar;
     private FrameLayout theframe;
+    private BioFragment bioFragment;
+    private ArtFragment artFragment;
+    private PhotoFragment photoFragment;
+    private VideoFragment videoFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        videoFragment = new VideoFragment();
+        bioFragment = new BioFragment();
+        photoFragment = new PhotoFragment();
+        artFragment = new ArtFragment();
+
         nav_bar = (BottomNavigationView) findViewById(R.id.nav_bar);
         theframe = (FrameLayout) findViewById(R.id.the_frame);
+
+        setfragments(bioFragment);
 
     nav_bar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-            return false;
+
+            switch (menuItem.getItemId()){
+
+                case R.id.nav_about :
+                    setfragments(bioFragment);
+                    return true;
+
+                case R.id.nav_photo :
+                    setfragments(photoFragment);
+                    return true;
+
+                case R.id.nav_art :
+                    setfragments(artFragment);
+                    return true;
+
+                case R.id.nav_video :
+                    setfragments(videoFragment);
+                    return true;
+
+                default:
+                        return false;
+            }
+
+
         }
     });
 
@@ -49,21 +85,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
 
-        ImageView avatar = findViewById(R.id.SC_foto);
-        TextView TxtNama = findViewById(R.id.TxtNama);
-        TextView TxtBio = findViewById(R.id.TxtAbout);
 
-        StringBuilder stringbuilder = new StringBuilder();
-
-        String message = " blalbalbalblablala ";
-
-        for(int i = 0; i<50;i++){
-
-            stringbuilder.append(message);
-
-        }
-
-            TxtBio.setText(stringbuilder.toString());
 
        /* CarouselView carouselView = findViewById(R.id.SC_carousel);
         carouselView.setPageCount(arrayimages.length);
@@ -103,6 +125,12 @@ public class MainActivity extends AppCompatActivity {
 
     }*/
 
+    private void setfragments (Fragment frags){
 
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+
+        fragmentTransaction.replace(R.id.the_frame, frags);
+        fragmentTransaction.commit();
+    }
 
 }

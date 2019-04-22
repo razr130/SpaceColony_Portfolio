@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BioFragment"
+    android:background="@color/colorPrimary">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/SC_name">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginTop="10dp"
+                android:id="@+id/SC_foto"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/avatar"/>
+
+            <TextView
+                android:id="@+id/TxtNama"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/SC_foto"
+                android:layout_marginTop="15dp"
+                android:text="Johanes Vincent Fernando"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/SC_title"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-black"/>
+            <View
+                android:layout_below="@+id/TxtNama"
+                android:layout_centerHorizontal="true"
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:background="@color/theline"
+                android:id="@+id/theline"/>
+
+            <TextView
+                android:id="@+id/TxtQuote"
+                android:layout_width="350dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/theline"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text='"The fuck am I doin here?"'
+                android:textColor="@color/theline"
+                android:textStyle="italic" />
+
+            <TextView
+                android:layout_below="@+id/TxtQuote"
+                android:id="@+id/TxtAbout"
+                android:layout_width="350dp"
+                android:textAlignment="center"
+                android:layout_height="match_parent"
+                android:textColor="@color/SC_title"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+    </ScrollView>
+
+</FrameLayout>

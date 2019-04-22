@@ -7,4 +7,7 @@
     <string name="nav_photo">Photo</string>
     <string name="nav_art">Art</string>
     <string name="nav_video">Video</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
